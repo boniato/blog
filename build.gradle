@@ -24,6 +24,11 @@ repositories {
 	mavenCentral()
 }
 
+task print() {
+	doLast{
+		println "github push complete"
+	}
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-aop')
