@@ -12,6 +12,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ * Created by Lee on 2017. 5. 5..
+ */
+
 @Data
 @Entity
 @ToString(exclude = { "post" })
