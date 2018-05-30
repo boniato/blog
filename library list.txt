@@ -1,0 +1,17 @@
+oauth2
+Lombok
+h2 
+rest
+web
+thymeleaf
+JPA
+cache
+configuration processor
+security
+websocket
+
+jdbc
+devtools
+
+--aws´Â ¾Æ´Ô
+aws
