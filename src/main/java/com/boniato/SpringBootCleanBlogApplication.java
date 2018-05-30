@@ -27,6 +27,9 @@ public class SpringBootCleanBlogApplication {
 		SpringApplication.run(SpringBootCleanBlogApplication.class, args);
 	}
 
+	/**
+	 * Thymeleaf Data Dialect paging
+	 */
 	@Bean
 	public SpringDataDialect springDataDialect() {
 		return new SpringDataDialect();

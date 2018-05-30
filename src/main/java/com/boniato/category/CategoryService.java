@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Lee on 2017. 5. 5..
@@ -31,11 +32,14 @@ public class CategoryService {
 	}
 
 	public void delete(Long id) {
-		categoryRepository.delete(id);
+		//categoryRepository.delete(id);
+		categoryRepository.deleteById(id); //20180526
 	}
-
+	
 	public void updateCategory(Category category) {
-		Category oldCategory = categoryRepository.findOne(category.getId());
+		//Category oldCategory = categoryRepository.findOne(category.getId());
+		Category oldCategory = categoryRepository.findById(category.getId()).get(); //20180526
+		
 		if (oldCategory == null) {
 			throw new NotFoundException(category.getId() + " not found");
 		}
@@ -55,6 +59,6 @@ public class CategoryService {
 	}
 
 	public Category findOne(Long id) {
-		return categoryRepository.findOne(id);
+		return categoryRepository.findById(id).get();
 	}
 }

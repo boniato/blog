@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 @Controller
@@ -28,9 +30,12 @@ public class CommentController {
 	private PostRepository postRepository;
 
 	@ModelAttribute
-	public Post post(@ModelAttribute CommentDto commentDto) {
-		return postRepository.findOne(commentDto.getPostId());
+	Optional<Post> post(@ModelAttribute CommentDto commentDto) {
+		return postRepository.findById(commentDto.getPostId()); //20180526
 	}
+	/*public Post post(@ModelAttribute CommentDto commentDto) {
+		return postRepository.findOne(commentDto.getPostId());
+	}*/
 
 	@PostMapping
 	public String createComment(@ModelAttribute @Valid CommentDto commentDto, BindingResult bindingResult, Model model,
